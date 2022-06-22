@@ -72,11 +72,7 @@ static void reset(size_d id)
 	assert(id<obj->n);
 	char bit = 0x01;
 	bit <<= id%8;
-	char temp = obj->data[id/8]&bit;
-	if(temp)
-		obj->data[id/8] ^= bit;
-	else
-		obj->data[id/8] |= bit;
+	obj->data[id/8] ^= bit;
 }
 
 static void reall()
